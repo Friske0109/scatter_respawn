@@ -1,0 +1,3 @@
+scoreboard objectives add sr_difficulty dummy
+execute unless entity @e[tag=sr_MapCenter] run summon armor_stand 1024 0 1024 {NoGravity:true,Marker:true,Invisible:true,Tags:["sr_MapCenter"]}
+tellraw @a ["",{"text":"[easy]","color":"green","clickEvent":{"action":"run_command","value":"/tag @e[tag=sr_MapCenter] add sr_easy"}},{"text":" "},{"text":"[normal]","color":"blue","clickEvent":{"action":"run_command","value":"/tag @e[tag=sr_MapCenter] add sr_normal"}},{"text":" "},{"text":"[hard]","color":"red","clickEvent":{"action":"run_command","value":"/tag @e[tag=sr_MapCenter] add sr_hard"}}]
