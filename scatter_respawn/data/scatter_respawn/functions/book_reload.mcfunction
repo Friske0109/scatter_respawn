@@ -1,9 +1,10 @@
 #clear
 clear @a minecraft:written_book
 
+tag @a[scores={sr_player=1..}] add sr_player
+scoreboard players set @a[tag=!sr_player] sr_player 0
+tag @a remove sr_player
 #score
-scoreboard objectives add sr_player dummy
-scoreboard players set @a sr_player 0
 execute unless entity @a[scores={sr_player=1}] run scoreboard players set @r[scores={sr_player=0}] sr_player 1
 execute unless entity @a[scores={sr_player=2}] run scoreboard players set @r[scores={sr_player=0}] sr_player 2
 execute unless entity @a[scores={sr_player=3}] run scoreboard players set @r[scores={sr_player=0}] sr_player 3
