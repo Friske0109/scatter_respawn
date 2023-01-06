@@ -44,7 +44,7 @@ execute if entity @e[tag=sr_MapCenter,scores={sr_difficulty=2}] run tellraw @a "
 
 #SpawnMarker
 kill @e[tag=sr_SpawnMarker]
-execute at @a run summon minecraft:armor_stand ~ ~ ~ {NoGravity:true,Marker:true,Invisible:true,Tags:["sr_SpawnMarker"]}
+execute at @a[tag=!sr_observer] run summon minecraft:armor_stand ~ ~ ~ {NoGravity:true,Marker:true,Invisible:true,Tags:["sr_SpawnMarker"]}
 execute at @a run execute store result score @e[tag=sr_SpawnMarker,sort=nearest,limit=1] sr_player run scoreboard players get @p sr_player
 
 #bossbar
