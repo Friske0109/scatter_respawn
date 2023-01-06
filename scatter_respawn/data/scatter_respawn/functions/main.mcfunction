@@ -2,7 +2,7 @@
 execute if entity @e[tag=sr_MapCenter,scores={sr_ingame=1,sr_timer=1}] run function scatter_respawn:stop
 
 #success
-execute if entity @e[tag=sr_MapCenter,scores={sr_ingame=1}] run execute store result score @e[tag=sr_MapCenter] sr_together run execute at @r run execute if entity @a[tag=!sr_observer,distance=..10]
+execute if entity @e[tag=sr_MapCenter,scores={sr_ingame=1}] run execute store result score @e[tag=sr_MapCenter] sr_together run execute at @r[tag=!sr_observer] run execute if entity @a[tag=!sr_observer,distance=..10]
 execute if entity @e[tag=sr_MapCenter,scores={sr_ingame=1}] run execute store result score @e[tag=sr_MapCenter] sr_people run execute if entity @a[tag=!sr_observer]
 execute if entity @e[tag=sr_MapCenter,scores={sr_ingame=1}] run scoreboard players operation @e[tag=sr_MapCenter] sr_people -= @e[tag=sr_MapCenter] sr_together
 execute if entity @e[tag=sr_MapCenter,scores={sr_ingame=1,sr_people=0}] run function scatter_respawn:success
