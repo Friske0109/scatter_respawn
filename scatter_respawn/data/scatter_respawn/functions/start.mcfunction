@@ -101,3 +101,4 @@ data modify entity @e[tag=sr_SpawnMarker,scores={sr_player=16},limit=1] CustomNa
 
 #player_spawn_hold
 execute at @e[tag=sr_SpawnMarker] run forceload add ~ ~ ~ ~
+tag @a[tag=!sr_observer] add sr_now_player

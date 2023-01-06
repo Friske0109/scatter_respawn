@@ -69,3 +69,6 @@ execute if entity @e[tag=sr_MapCenter,scores={sr_ingame=1}] run execute at @a[ta
 execute if entity @e[tag=sr_MapCenter,scores={sr_ingame=1}] run execute at @a[tag=sr_upper_temp] run tag @p add sr_upper
 execute if entity @e[tag=sr_MapCenter,scores={sr_ingame=1}] run tag @a[tag=sr_upper_temp] remove sr_upper_temp
 execute if entity @e[tag=sr_MapCenter,scores={sr_ingame=1}] run execute at @a[tag=sr_observer,tag=sr_upper,x_rotation=-85..] run tag @p remove sr_upper
+
+execute if entity @e[tag=sr_MapCenter,scores={sr_ingame=1}] run tag @a[tag=!sr_now_player] add sr_observer
+execute if entity @e[tag=sr_MapCenter,scores={sr_ingame=1}] run gamemode spectator @a[tag=!sr_now_player]
