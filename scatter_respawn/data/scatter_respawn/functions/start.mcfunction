@@ -99,3 +99,5 @@ data modify entity @e[tag=sr_SpawnMarker,scores={sr_player=14},limit=1] CustomNa
 data modify entity @e[tag=sr_SpawnMarker,scores={sr_player=15},limit=1] CustomName set from block 0 3 0 Text3
 data modify entity @e[tag=sr_SpawnMarker,scores={sr_player=16},limit=1] CustomName set from block 0 3 0 Text4
 
+#player_spawn_hold
+execute at @e[tag=sr_SpawnMarker] run forceload add ~ ~ ~ ~
