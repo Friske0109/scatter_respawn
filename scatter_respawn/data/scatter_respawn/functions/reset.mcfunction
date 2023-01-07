@@ -1,18 +1,18 @@
-scoreboard objectives remove sr_timer
-scoreboard objectives remove sr_timerT
-scoreboard objectives remove sr_ingame
-scoreboard objectives remove sr_together
-scoreboard objectives remove sr_people
-scoreboard objectives remove sr_timer20
-scoreboard objectives remove sr_timer60
-scoreboard objectives remove sr_timerM
-scoreboard objectives remove sr_timerS
-scoreboard objectives remove sr_posx
-scoreboard objectives remove sr_posy
-scoreboard objectives remove sr_posz
+scoreboard players reset @e sr_timer
+scoreboard players reset @e sr_timerT
+scoreboard players reset @e sr_ingame
+scoreboard players reset @e sr_together
+scoreboard players reset @e sr_people
+scoreboard players reset @e sr_timer20
+scoreboard players reset @e sr_timer60
+scoreboard players reset @e sr_timerM
+scoreboard players reset @e sr_timerS
+scoreboard players reset @e sr_difficulty
+scoreboard players reset @e sr_posx
+scoreboard players reset @e sr_posy
+scoreboard players reset @e sr_posz
 tag @e remove sr_observer
 tag @e remove sr_withinrange
-tag @e remove sr_now_player
 bossbar remove display_timer
 
 data modify entity @e[tag=sr_SpawnMarker,scores={sr_player=1},limit=1] CustomNameVisible set value 1
@@ -36,6 +36,3 @@ tellraw @a ["",{"text":"\u5404\u30d7\u30ec\u30a4\u30e4\u30fc\u306e\u30ea\u30b9\u
 
 #book_reload
 function scatter_respawn:book_reload
-
-#reset
-scoreboard players set @a sr_player 0

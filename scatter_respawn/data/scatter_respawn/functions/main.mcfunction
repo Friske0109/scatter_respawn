@@ -2,8 +2,9 @@
 execute if entity @e[tag=sr_MapCenter,scores={sr_ingame=1,sr_timer=1}] run function scatter_respawn:stop
 
 #success
-execute if entity @e[tag=sr_MapCenter,scores={sr_ingame=1}] run execute store result score @e[tag=sr_MapCenter] sr_together run execute at @r[tag=!sr_observer] run execute if entity @a[tag=!sr_observer,distance=..10]
-execute if entity @e[tag=sr_MapCenter,scores={sr_ingame=1}] run execute store result score @e[tag=sr_MapCenter] sr_people run execute if entity @a[tag=!sr_observer]
+execute if entity @e[tag=sr_MapCenter,scores={sr_ingame=1}] run execute store result score @a[tag=!sr_observer] sr_together run execute at @a[tag=!sr_observer] run execute if entity @a[tag=!sr_observer,distance=..10]
+execute if entity @e[tag=sr_MapCenter,scores={sr_ingame=1}] run execute store result score @e[tag=sr_MapCenter] sr_people run execute at @a[tag=!sr_observer] run execute if entity @a[tag=!sr_observer]
+execute if entity @e[tag=sr_MapCenter,scores={sr_ingame=1}] run scoreboard players operation @e[tag=sr_MapCenter] sr_together = @r[tag=!sr_observer] sr_together
 execute if entity @e[tag=sr_MapCenter,scores={sr_ingame=1}] run scoreboard players operation @e[tag=sr_MapCenter] sr_people -= @e[tag=sr_MapCenter] sr_together
 execute if entity @e[tag=sr_MapCenter,scores={sr_ingame=1,sr_people=0}] run function scatter_respawn:success
 
@@ -22,12 +23,12 @@ execute if entity @e[tag=sr_MapCenter,scores={sr_ingame=1}] run tag @a remove sr
 execute if entity @e[tag=sr_MapCenter,scores={sr_ingame=1}] run execute at @e[tag=sr_MapCenter] run execute positioned ~-1024 -64 ~-1024 run tag @a[dx=2048,dy=400,dz=2048,tag=!sr_observer] add sr_withinrange
 
 #iswithinrange(easy)
-execute if entity @e[tag=sr_MapCenter,scores={sr_ingame=1,sr_timer=48000}] run execute unless entity @e[tag=sr_MapCenter,scores={sr_difficulty=1..}] run tellraw @a ["",{"text":"\u30de\u30c3\u30d7\u5916 : "},{"selector":"@a[tag=!sr_withinrange,tag=!sr_observer]"}]
-execute if entity @e[tag=sr_MapCenter,scores={sr_ingame=1,sr_timer=24000}] run execute unless entity @e[tag=sr_MapCenter,scores={sr_difficulty=1..}] run tellraw @a ["",{"text":"\u30de\u30c3\u30d7\u5916 : "},{"selector":"@a[tag=!sr_withinrange,tag=!sr_observer]"}]
-execute if entity @e[tag=sr_MapCenter,scores={sr_ingame=1,sr_timer=12000}] run execute unless entity @e[tag=sr_MapCenter,scores={sr_difficulty=1..}] run tellraw @a ["",{"text":"\u30de\u30c3\u30d7\u5916 : "},{"selector":"@a[tag=!sr_withinrange,tag=!sr_observer]"}]
+execute if entity @e[tag=sr_MapCenter,scores={sr_ingame=1,sr_timer=48000}] run execute unless entity @e[tag=sr_MapCenter,scores={sr_difficulty=1..}] run tellraw @a ["",{"text":"\u30de\u30c3\u30d7\u5916 : "},{"selector":"@a[tag=!sr_withinrange]"}]
+execute if entity @e[tag=sr_MapCenter,scores={sr_ingame=1,sr_timer=24000}] run execute unless entity @e[tag=sr_MapCenter,scores={sr_difficulty=1..}] run tellraw @a ["",{"text":"\u30de\u30c3\u30d7\u5916 : "},{"selector":"@a[tag=!sr_withinrange]"}]
+execute if entity @e[tag=sr_MapCenter,scores={sr_ingame=1,sr_timer=12000}] run execute unless entity @e[tag=sr_MapCenter,scores={sr_difficulty=1..}] run tellraw @a ["",{"text":"\u30de\u30c3\u30d7\u5916 : "},{"selector":"@a[tag=!sr_withinrange]"}]
 
 #iswithinrange(normal)
-execute if entity @e[tag=sr_MapCenter,scores={sr_ingame=1,sr_timer=36000,sr_difficulty=1}] run tellraw @a ["",{"text":"\u30de\u30c3\u30d7\u5916 : "},{"selector":"@a[tag=!sr_withinrange,tag=!sr_observer]"}]
+execute if entity @e[tag=sr_MapCenter,scores={sr_ingame=1,sr_timer=36000,sr_difficulty=1}] run tellraw @a ["",{"text":"\u30de\u30c3\u30d7\u5916 : "},{"selector":"@a[tag=!sr_withinrange]"}]
 
 #difficulty_config
 execute if entity @e[tag=sr_easy] run tellraw @a "難易度がeasyに設定されました"
@@ -69,6 +70,3 @@ execute if entity @e[tag=sr_MapCenter,scores={sr_ingame=1}] run execute at @a[ta
 execute if entity @e[tag=sr_MapCenter,scores={sr_ingame=1}] run execute at @a[tag=sr_upper_temp] run tag @p add sr_upper
 execute if entity @e[tag=sr_MapCenter,scores={sr_ingame=1}] run tag @a[tag=sr_upper_temp] remove sr_upper_temp
 execute if entity @e[tag=sr_MapCenter,scores={sr_ingame=1}] run execute at @a[tag=sr_observer,tag=sr_upper,x_rotation=-85..] run tag @p remove sr_upper
-
-execute if entity @e[tag=sr_MapCenter,scores={sr_ingame=1}] run tag @a[tag=!sr_now_player] add sr_observer
-execute if entity @e[tag=sr_MapCenter,scores={sr_ingame=1}] run gamemode spectator @a[tag=!sr_now_player]
