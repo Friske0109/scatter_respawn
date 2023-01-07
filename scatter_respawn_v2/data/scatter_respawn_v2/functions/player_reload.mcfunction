@@ -1,0 +1,17 @@
+scoreboard players set @a sr_player 0
+scoreboard players set @r[scores={sr_player=0}] sr_player 1
+scoreboard players set @r[scores={sr_player=0}] sr_player 2
+scoreboard players set @r[scores={sr_player=0}] sr_player 3
+scoreboard players set @r[scores={sr_player=0}] sr_player 4
+scoreboard players set @r[scores={sr_player=0}] sr_player 5
+scoreboard players set @r[scores={sr_player=0}] sr_player 6
+scoreboard players set @r[scores={sr_player=0}] sr_player 7
+scoreboard players set @r[scores={sr_player=0}] sr_player 8
+scoreboard players set @r[scores={sr_player=0}] sr_player 9
+scoreboard players set @r[scores={sr_player=0}] sr_player 10
+scoreboard players set @r[scores={sr_player=0}] sr_player 11
+scoreboard players set @r[scores={sr_player=0}] sr_player 12
+scoreboard players set @r[scores={sr_player=0}] sr_player 13
+scoreboard players set @r[scores={sr_player=0}] sr_player 14
+scoreboard players set @r[scores={sr_player=0}] sr_player 15
+scoreboard players set @r[scores={sr_player=0}] sr_player 16
