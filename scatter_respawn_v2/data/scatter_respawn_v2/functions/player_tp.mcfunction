@@ -1,8 +1,8 @@
 #player_tp
 
 tag @a[tag=!sr_observer] add sr_player
-execute at @e[tag=sr_MapCenter] run spreadplayers ~ ~ 512 1024 false @a[tag=!sr_observer]
-execute at @e[tag=sr_MapCenter] run tp @a[tag=sr_observer] @e[tag=sr_MapCenter,limit=1]
+execute at @e[tag=sr_MapCenter] run spreadplayers ~ ~ 512 1024 false @a[tag=sr_player]
+execute at @e[tag=sr_MapCenter] run tp @a[tag=sr_observer] ~ ~ ~
 
 
 #player_setting

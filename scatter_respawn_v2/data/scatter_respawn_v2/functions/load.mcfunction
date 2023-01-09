@@ -11,7 +11,6 @@ execute unless entity @e[tag=sr_MapCenter] run summon minecraft:armor_stand 0 10
 
 
 #scoreboard
-scoreboard objectives add sr_playcount dummy
 scoreboard objectives add sr_report dummy
 scoreboard objectives add sr_timelimit dummy
 scoreboard objectives add sr_player dummy
