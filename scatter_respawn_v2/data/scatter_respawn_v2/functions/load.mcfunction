@@ -6,6 +6,7 @@ function scatter_respawn_v2:book_reload
 
 forceload add 0 0 0 0
 execute unless entity @e[tag=sr_PlayCounter] run summon minecraft:armor_stand 0 100 0 {NoGravity:true,Marker:true,Invisible:true,Tags:["sr_PlayCounter"]}
+execute unless entity @e[tag=sr_MapCenter] run summon minecraft:armor_stand 0 100 0 {NoGravity:true,Marker:true,Invisible:true,Tags:["sr_MapCenter"]}
 
 
 

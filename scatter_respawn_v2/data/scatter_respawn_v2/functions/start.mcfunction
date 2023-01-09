@@ -1,7 +1,9 @@
 #playcount
 
 scoreboard players add @e[tag=sr_PlayCounter] sr_playcount 1
-
+execute at @e[tag=sr_MapCenter] run forceload add ~4096 ~4096 ~4096 ~4096
+execute at @e[tag=sr_MapCenter] run tp @e[tag=sr_MapCenter] ~4096 ~ ~4096
+function scatter_respawn_v2:player_tp
 
 #MapCenter
 

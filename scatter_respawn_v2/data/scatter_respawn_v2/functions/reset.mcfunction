@@ -1,4 +1,3 @@
-kill @e[tag=sr_MapCenter]
 scoreboard objectives remove sr_ingame
 scoreboard objectives remove sr_timer
 scoreboard objectives remove sr_timerT
