@@ -55,3 +55,8 @@ execute if entity @a[tag=sr_observer_setting] run execute if entity @a[tag=sr_ob
 execute if entity @a[tag=sr_observer_setting] run execute unless entity @a[tag=sr_observer_temp] run tellraw @a ["",{"text":""},{"selector":"@a[tag=sr_observer_setting]"},{"text":"を観戦者から除外しました"}]
 execute if entity @a[tag=sr_observer_setting] run tag @a[tag=sr_observer_temp] remove sr_observer_temp
 execute if entity @a[tag=sr_observer_setting] run tag @a[tag=sr_observer_setting] remove sr_observer_setting
+
+#observer
+
+execute if entity @e[tag=sr_MapCenter,scores={sr_ingame=1}] run tag @a[tag=!sr_player,tag=!sr_observer] add sr_observer
+execute if entity @e[tag=sr_MapCenter,scores={sr_ingame=1}] run gamemode spectator @a[tag=sr_observer,gamemode=!spectator]
