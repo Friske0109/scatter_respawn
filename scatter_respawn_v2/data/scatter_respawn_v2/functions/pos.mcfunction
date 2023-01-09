@@ -5,4 +5,4 @@ execute at @a run scoreboard players operation @p sr_posx -= @e[tag=sr_MapCenter
 execute at @a run scoreboard players operation @p sr_posy -= @e[tag=sr_MapCenter,limit=1] sr_posy
 execute at @a run scoreboard players operation @p sr_posz -= @e[tag=sr_MapCenter,limit=1] sr_posz
 
-execute at @a run title @p actionbar ["",{"text":"\u5ea7\u6a19: x "},{"score":{"name":"@p","objective":"sr_posx"}},{"text":" y "},{"score":{"name":"@p","objective":"sr_posy"}},{"text":" z "},{"score":{"name":"@p","objective":"sr_posz"}}]
+execute at @a[tag=sr_observer] run title @p actionbar ["",{"text":"\u5ea7\u6a19: x "},{"score":{"name":"@p","objective":"sr_posx"}},{"text":" y "},{"score":{"name":"@p","objective":"sr_posy"}},{"text":" z "},{"score":{"name":"@p","objective":"sr_posz"}}]

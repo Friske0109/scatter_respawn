@@ -13,6 +13,8 @@ scoreboard objectives remove sr_people
 scoreboard objectives remove sr_together
 tag @e remove sr_observer
 tag @e remove sr_player
+tag @e remove sr_now_player
+tag @e remove sr_withinrange
 bossbar remove minecraft:display_timer
 gamemode creative @a
 
